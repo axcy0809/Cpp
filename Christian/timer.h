@@ -9,7 +9,7 @@ template <typename F, typename ... Ts>
 double track_time(F&& f, Ts&&...args)
 {
     std::clock_t start = std::clock();
-    std::forward<F>(f)(std::forward<Ts>(args)...);
+    f(std::forward<Ts>(args)...);
     double runtime = static_cast<double>(std::clock() - start) / static_cast<double>(CLOCKS_PER_SEC);
 
     accumulatedRuntime += runtime;

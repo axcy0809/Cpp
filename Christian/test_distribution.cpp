@@ -55,6 +55,10 @@ template <class T> void test_containers() {
     Distribution<double> init_distr = populate_with_distribution(ctnr);
     Distribution final_distr(ctnr);
     print_difference(init_distr, final_distr);
+    std::cout << "mean init: " << init_distr.mean << std::endl;
+    std::cout << "mean final: " << final_distr.mean << std::endl;
+    std::cout << "stddev init: " << init_distr.stddev << std::endl;
+    std::cout << "stddev final: " << final_distr.stddev << std::endl;
   }
   {
     std::cout << "  List: " << std::endl;
@@ -63,6 +67,10 @@ template <class T> void test_containers() {
     Distribution<double> init_distr = populate_with_distribution(ctnr);
     Distribution final_distr(ctnr);
     print_difference(init_distr, final_distr);
+    std::cout << "mean init: " << init_distr.mean << std::endl;
+    std::cout << "mean final: " << final_distr.mean << std::endl;
+    std::cout << "stddev init: " << init_distr.stddev << std::endl;
+    std::cout << "stddev final: " << final_distr.stddev << std::endl;
   }
   {
     std::cout << "  Deque: " << std::endl;
@@ -71,6 +79,10 @@ template <class T> void test_containers() {
     Distribution<double> init_distr = populate_with_distribution(ctnr);
     Distribution final_distr(ctnr);
     print_difference(init_distr, final_distr);
+    std::cout << "mean init: " << init_distr.mean << std::endl;
+    std::cout << "mean final: " << final_distr.mean << std::endl;
+    std::cout << "stddev init: " << init_distr.stddev << std::endl;
+    std::cout << "stddev final: " << final_distr.stddev << std::endl;
   }
 }
 

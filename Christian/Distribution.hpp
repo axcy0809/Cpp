@@ -19,18 +19,17 @@ template <typename T> struct Distribution {
     stddev = sqrt(stddev / dataset.size());
   }
 
-  template <template <typename, typename> class Cont>
-  /*Distribution(const ContainerT &c, ContainerT& dataset) : mean(0), stddev(0) {
-    for (T item: dataset)
-            mean += item;
-        mean = mean / dataset.size();
-
-        for (T item: dataset)
-            stddev += (item - mean) * (item - mean);
-        stddev = sqrt(stddev / dataset.size());
-  }*/
-  Distribution(const Cont<T, std::allocator<T>>& dataset) 
+  template <template <typename> class Cont>
+  /* Recall that the standard containers actually have at least two parameters: 
+     the element type and an allocator type. Containers use allocators to allocate 
+     and free their working memory so that this behavior may be customized. In effect, 
+     the allocator specifies a memory management policy for the container. 
+     The allocator has a default so it's easy to forget it's there. However, when you 
+     instantiate a standard container like vector<int>, you're actually 
+     getting vector< int, std::allocator<int> >.*/
+  Distribution(const Cont<T>& dataset) 
   : mean(0), stddev(0) {
+      
       for (T item: dataset)
         mean = mean + item;
     mean = mean / dataset.size();
@@ -39,6 +38,4 @@ template <typename T> struct Distribution {
         stddev = stddev + (item - mean) * (item - mean);
     stddev = sqrt(stddev / dataset.size());
   }
-  // (Task 2) missing functionality to 
-  // construct a Distribution from other container types
 };
