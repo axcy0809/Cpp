@@ -1,0 +1,42 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/alexander/Dokumente/WS2020/AdvancedC++/ex2/Distribution.hpp
+cmath
+-
+iostream
+-
+vector
+-
+
+/home/alexander/Dokumente/WS2020/AdvancedC++/ex2/SpaceVector.hpp
+array
+-
+cmath
+-
+
+/home/alexander/Dokumente/WS2020/AdvancedC++/ex2/test_distribution.cpp
+Distribution.hpp
+/home/alexander/Dokumente/WS2020/AdvancedC++/ex2/Distribution.hpp
+SpaceVector.hpp
+/home/alexander/Dokumente/WS2020/AdvancedC++/ex2/SpaceVector.hpp
+cmath
+-
+deque
+-
+iomanip
+-
+iostream
+-
+list
+-
+random
+-
+vector
+-
+

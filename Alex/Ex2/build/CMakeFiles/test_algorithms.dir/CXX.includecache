@@ -1,0 +1,32 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/alexander/Dokumente/WS2020/AdvancedC++/ex2/algorithms.h
+algorithm
+-
+cmath
+-
+iomanip
+-
+iostream
+-
+string
+-
+
+/home/alexander/Dokumente/WS2020/AdvancedC++/ex2/test_algorithms.cpp
+algorithms.h
+/home/alexander/Dokumente/WS2020/AdvancedC++/ex2/algorithms.h
+iomanip
+-
+iostream
+-
+iterator
+-
+vector
+-
+
