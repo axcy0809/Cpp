@@ -48,10 +48,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/alexander/Dokumente/WS2020/AdvancedC++/ex2
+CMAKE_SOURCE_DIR = /home/alexander/Dokumente/WS2020/AdvancedC++/Cpp/Alex/Ex2
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/alexander/Dokumente/WS2020/AdvancedC++/ex2/build
+CMAKE_BINARY_DIR = /home/alexander/Dokumente/WS2020/AdvancedC++/Cpp/Alex/Ex2/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -80,9 +80,9 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/alexander/Dokumente/WS2020/AdvancedC++/ex2/build/CMakeFiles /home/alexander/Dokumente/WS2020/AdvancedC++/ex2/build/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/alexander/Dokumente/WS2020/AdvancedC++/Cpp/Alex/Ex2/build/CMakeFiles /home/alexander/Dokumente/WS2020/AdvancedC++/Cpp/Alex/Ex2/build/CMakeFiles/progress.marks
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/alexander/Dokumente/WS2020/AdvancedC++/ex2/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/alexander/Dokumente/WS2020/AdvancedC++/Cpp/Alex/Ex2/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -111,44 +111,84 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named test_distribution
+# Target rules for targets named test_algorithms
 
 # Build rule for target.
-test_distribution: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 test_distribution
-.PHONY : test_distribution
+test_algorithms: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 test_algorithms
+.PHONY : test_algorithms
 
 # fast build rule for target.
-test_distribution/fast:
-	$(MAKE) -f CMakeFiles/test_distribution.dir/build.make CMakeFiles/test_distribution.dir/build
-.PHONY : test_distribution/fast
+test_algorithms/fast:
+	$(MAKE) -f CMakeFiles/test_algorithms.dir/build.make CMakeFiles/test_algorithms.dir/build
+.PHONY : test_algorithms/fast
 
-test_distribution.o: test_distribution.cpp.o
+#=============================================================================
+# Target rules for targets named test_timer
 
-.PHONY : test_distribution.o
+# Build rule for target.
+test_timer: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 test_timer
+.PHONY : test_timer
+
+# fast build rule for target.
+test_timer/fast:
+	$(MAKE) -f CMakeFiles/test_timer.dir/build.make CMakeFiles/test_timer.dir/build
+.PHONY : test_timer/fast
+
+test_algorithms.o: test_algorithms.cpp.o
+
+.PHONY : test_algorithms.o
 
 # target to build an object file
-test_distribution.cpp.o:
-	$(MAKE) -f CMakeFiles/test_distribution.dir/build.make CMakeFiles/test_distribution.dir/test_distribution.cpp.o
-.PHONY : test_distribution.cpp.o
+test_algorithms.cpp.o:
+	$(MAKE) -f CMakeFiles/test_algorithms.dir/build.make CMakeFiles/test_algorithms.dir/test_algorithms.cpp.o
+.PHONY : test_algorithms.cpp.o
 
-test_distribution.i: test_distribution.cpp.i
+test_algorithms.i: test_algorithms.cpp.i
 
-.PHONY : test_distribution.i
+.PHONY : test_algorithms.i
 
 # target to preprocess a source file
-test_distribution.cpp.i:
-	$(MAKE) -f CMakeFiles/test_distribution.dir/build.make CMakeFiles/test_distribution.dir/test_distribution.cpp.i
-.PHONY : test_distribution.cpp.i
+test_algorithms.cpp.i:
+	$(MAKE) -f CMakeFiles/test_algorithms.dir/build.make CMakeFiles/test_algorithms.dir/test_algorithms.cpp.i
+.PHONY : test_algorithms.cpp.i
 
-test_distribution.s: test_distribution.cpp.s
+test_algorithms.s: test_algorithms.cpp.s
 
-.PHONY : test_distribution.s
+.PHONY : test_algorithms.s
 
 # target to generate assembly for a file
-test_distribution.cpp.s:
-	$(MAKE) -f CMakeFiles/test_distribution.dir/build.make CMakeFiles/test_distribution.dir/test_distribution.cpp.s
-.PHONY : test_distribution.cpp.s
+test_algorithms.cpp.s:
+	$(MAKE) -f CMakeFiles/test_algorithms.dir/build.make CMakeFiles/test_algorithms.dir/test_algorithms.cpp.s
+.PHONY : test_algorithms.cpp.s
+
+test_timer.o: test_timer.cpp.o
+
+.PHONY : test_timer.o
+
+# target to build an object file
+test_timer.cpp.o:
+	$(MAKE) -f CMakeFiles/test_timer.dir/build.make CMakeFiles/test_timer.dir/test_timer.cpp.o
+.PHONY : test_timer.cpp.o
+
+test_timer.i: test_timer.cpp.i
+
+.PHONY : test_timer.i
+
+# target to preprocess a source file
+test_timer.cpp.i:
+	$(MAKE) -f CMakeFiles/test_timer.dir/build.make CMakeFiles/test_timer.dir/test_timer.cpp.i
+.PHONY : test_timer.cpp.i
+
+test_timer.s: test_timer.cpp.s
+
+.PHONY : test_timer.s
+
+# target to generate assembly for a file
+test_timer.cpp.s:
+	$(MAKE) -f CMakeFiles/test_timer.dir/build.make CMakeFiles/test_timer.dir/test_timer.cpp.s
+.PHONY : test_timer.cpp.s
 
 # Help Target
 help:
@@ -157,11 +197,15 @@ help:
 	@echo "... clean"
 	@echo "... depend"
 	@echo "... rebuild_cache"
-	@echo "... test_distribution"
+	@echo "... test_algorithms"
 	@echo "... edit_cache"
-	@echo "... test_distribution.o"
-	@echo "... test_distribution.i"
-	@echo "... test_distribution.s"
+	@echo "... test_timer"
+	@echo "... test_algorithms.o"
+	@echo "... test_algorithms.i"
+	@echo "... test_algorithms.s"
+	@echo "... test_timer.o"
+	@echo "... test_timer.i"
+	@echo "... test_timer.s"
 .PHONY : help
 
 

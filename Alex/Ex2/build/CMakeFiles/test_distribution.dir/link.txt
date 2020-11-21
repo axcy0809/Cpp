@@ -1,1 +1,0 @@
-/usr/bin/c++  -std=c++17 -Werror -Wall  -rdynamic CMakeFiles/test_distribution.dir/test_distribution.cpp.o  -o test_distribution 

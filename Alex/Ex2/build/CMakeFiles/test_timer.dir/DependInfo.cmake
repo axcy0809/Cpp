@@ -4,7 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/alexander/Dokumente/WS2020/AdvancedC++/ex2/test_timer.cpp" "/home/alexander/Dokumente/WS2020/AdvancedC++/ex2/build/CMakeFiles/test_timer.dir/test_timer.cpp.o"
+  "/home/alexander/Dokumente/WS2020/AdvancedC++/Cpp/Alex/Ex2/test_timer.cpp" "/home/alexander/Dokumente/WS2020/AdvancedC++/Cpp/Alex/Ex2/build/CMakeFiles/test_timer.dir/test_timer.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 

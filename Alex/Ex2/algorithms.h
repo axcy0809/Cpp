@@ -3,91 +3,92 @@
 #include <iomanip>
 #include <iostream>
 #include <string>
+#include <numeric>
 
 // print container elements
-template <typename C> auto print(const std::string &text, const C &ctnr) {
-  std::cout << std::setw(23) << text << ": ";
-  for (std::size_t i = 0; i < ctnr.size(); ++i) {
-    std::cout << ctnr[i] << "|";
-  }
+template <typename C> 
+auto print(const std::string &text, const C &ctnr) 
+{
+  auto func = [](const typename C::value_type &item) 
+  {
+    std::cout << item << "|";
+  }; // function object from lambda expression
+
+  std::cout << std::setw(23) << text << ": ";  
+  std::for_each(ctnr.begin(), ctnr. end(), func); // for_each from <algorithm>  //func is the lambda function
   std::cout << std::endl;
 };
 
 // populate container with constant value
-template <typename C>
-auto populate_with_value(C &ctnr, typename C::value_type value) {
-  for (std::size_t i = 0; i < ctnr.size(); ++i) {
-    ctnr[i] = value;
-  }
+template <typename C> 
+auto populate_with_value(C &ctnr, typename C::value_type value)
+{
+  std::fill(ctnr.begin(), ctnr.end(), value); // calls ctnr times and fills value in ctnr
 };
+
 
 // populate container sequence of values
 template <typename C>
-auto populate_with_sequence(C &ctnr, typename C::value_type start) {
-  for (std::size_t i = 0; i < ctnr.size(); ++i) {
-    ctnr[i] = start++;
-  }
+auto populate_with_sequence(C &ctnr, typename C::value_type start)
+{
+    // The mutable specification enables the body of a lambda expression 
+    // to modify variables that are captured by value
+  auto func = [start](typename C::value_type& item)mutable
+  {
+    item = start++;
+    return item;
+  };
+  std::transform(ctnr.begin(), ctnr.end(), ctnr.begin(), func);
 };
 
 // multiply each element in container by value
 template <typename C>
-auto multiply_with_value(C &ctnr, typename C::value_type value) {
-  for (std::size_t i = 0; i < ctnr.size(); ++i) {
-    ctnr[i] *= value;
-  }
+auto multiply_with_value(C &ctnr, typename C::value_type value)
+{
+  auto func = [value](typename C::value_type& item)
+  {
+    return item * value;
+  };
+  std::transform(ctnr.begin(), ctnr.end(), ctnr.begin(), func);
+
+  //std::transform(ctnr.begin(), ctnr.end(), ctnr.begin(),[value](typename C::value_type& item){return item * value;});
 };
 
 // reverse order of elements
-template <typename C> auto sort_descending(C &ctnr) {
-  for (std::size_t i = 0, ir = ctnr.size() - 1; i < ctnr.size() / 2;
-       ++i, --ir) {
-    if (ir == i) {
-      break;
-    }
-    std::swap(ctnr[i], ctnr[ir]);
-  }
+template <typename C> auto 
+sort_descending(C &ctnr) 
+{
+  std::reverse(ctnr.begin(), ctnr.end());  // reverse the pointers pointer 
 };
 
 // check how many elements fullfill a condition
 template <typename C>
-auto count_fullfills_cond(
-    C &ctnr, bool (*condition)(const typename C::value_type &value)) {
-  std::size_t count = 0;
-  for (std::size_t i = 0; i < ctnr.size(); ++i) {
-    if (condition(ctnr[i])) {
-      ++count;
-    }
-  }
+auto count_fullfills_cond(C &ctnr, bool (*condition)(const typename C::value_type &value)) 
+{
+  std::size_t count = std::count_if(ctnr.begin(), ctnr.end(), condition); // counts solange if the condition is fullfiled
+
   return count;
 };
 
 // check if two containers are equal in length and content
-template <typename C> auto check_are_equal(const C &a, const C &b) {
-  if (a.size() != b.size()) {
-    return false;
-  }
-  for (std::size_t i = 0; i < a.size(); ++i) {
-    if (a != b) {
-      return false;
-    }
-  }
-  return true;
+template <typename C> auto check_are_equal(const C &a, const C &b) 
+{
+  return std::equal(a.begin(), a.end(), b.begin());
 };
 
 // sum all elements in the container
-template <typename C> auto sum_of_elements(const C &ctnr) {
-  typename C::value_type sum{};
-  for (std::size_t i = 0; i < ctnr.size(); ++i) {
-    sum += ctnr[i];
-  }
-  return sum;
+template <typename C> auto sum_of_elements(const C &ctnr)
+{
+  return std::accumulate(ctnr.begin(), ctnr.end(), 0);
 };
 
 // sum of absolute values of elements in the container
-template <typename C> auto abssum_of_elements(C &ctnr) {
-  typename C::value_type sum{};
-  for (std::size_t i = 0; i < ctnr.size(); ++i) {
-    sum += std::abs(ctnr[i]);
-  }
-  return sum;
+template <typename C> auto abssum_of_elements(C &ctnr) 
+{
+    auto abs = [](const typename C::value_type &a, const typename C::value_type &b) 
+    {
+        return a + std::abs(b);
+    };
+
+    return std::accumulate(ctnr.begin(), ctnr.end(), 0, abs);
 };

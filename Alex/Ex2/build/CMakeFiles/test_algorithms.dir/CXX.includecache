@@ -6,7 +6,7 @@
 
 #IncludeRegexTransform: 
 
-/home/alexander/Dokumente/WS2020/AdvancedC++/ex2/algorithms.h
+/home/alexander/Dokumente/WS2020/AdvancedC++/Cpp/Alex/Ex2/algorithms.h
 algorithm
 -
 cmath
@@ -17,10 +17,12 @@ iostream
 -
 string
 -
+numeric
+-
 
-/home/alexander/Dokumente/WS2020/AdvancedC++/ex2/test_algorithms.cpp
+/home/alexander/Dokumente/WS2020/AdvancedC++/Cpp/Alex/Ex2/test_algorithms.cpp
 algorithms.h
-/home/alexander/Dokumente/WS2020/AdvancedC++/ex2/algorithms.h
+/home/alexander/Dokumente/WS2020/AdvancedC++/Cpp/Alex/Ex2/algorithms.h
 iomanip
 -
 iostream
