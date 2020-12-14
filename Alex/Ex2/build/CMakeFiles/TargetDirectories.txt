@@ -1,3 +1,4 @@
-/home/alexander/Dokumente/WS2020/AdvancedC++/ex2/build/CMakeFiles/rebuild_cache.dir
-/home/alexander/Dokumente/WS2020/AdvancedC++/ex2/build/CMakeFiles/test_distribution.dir
-/home/alexander/Dokumente/WS2020/AdvancedC++/ex2/build/CMakeFiles/edit_cache.dir
+/home/alexander/Dokumente/WS2020/AdvancedC++/Cpp/Alex/Ex2/build/CMakeFiles/rebuild_cache.dir
+/home/alexander/Dokumente/WS2020/AdvancedC++/Cpp/Alex/Ex2/build/CMakeFiles/test_algorithms.dir
+/home/alexander/Dokumente/WS2020/AdvancedC++/Cpp/Alex/Ex2/build/CMakeFiles/edit_cache.dir
+/home/alexander/Dokumente/WS2020/AdvancedC++/Cpp/Alex/Ex2/build/CMakeFiles/test_timer.dir

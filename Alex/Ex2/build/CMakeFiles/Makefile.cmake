@@ -39,5 +39,6 @@ set(CMAKE_MAKEFILE_PRODUCTS
 
 # Dependency information for all targets:
 set(CMAKE_DEPEND_INFO_FILES
-  "CMakeFiles/test_distribution.dir/DependInfo.cmake"
+  "CMakeFiles/test_algorithms.dir/DependInfo.cmake"
+  "CMakeFiles/test_timer.dir/DependInfo.cmake"
   )
